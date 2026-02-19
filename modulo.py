@@ -11,7 +11,7 @@ def obtenerFechaExpiracion(dominio):
         #   Convierto la forma de la fecha
         fecha_obj = datetime.fromisoformat(str(fecha))
         fecha_final = fecha_obj.strftime("%d/%m/%Y")
-        return (dominio, fecha_final)
+        return f"{dominio}, Vence: {fecha_final}"
     except Exception as e:
         return f"Error {e}"
 
