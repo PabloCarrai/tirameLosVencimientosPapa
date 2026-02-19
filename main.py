@@ -1,9 +1,11 @@
 from modulo import obtenerFechaExpiracion as ofe
+from modulo import leerArchivo as la
 
 
 def main():
-    fecha_vencimiento = ofe("program.gob.ar")
-    print(fecha_vencimiento)
+    dominios = la("dominios.txt")
+    for dominio in dominios:
+        print(ofe(dominio))
 
 
 if __name__ == "__main__":

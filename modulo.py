@@ -11,6 +11,16 @@ def obtenerFechaExpiracion(dominio):
         #   Convierto la forma de la fecha
         fecha_obj = datetime.fromisoformat(str(fecha))
         fecha_final = fecha_obj.strftime("%d/%m/%Y")
-        return fecha_final
+        return (dominio, fecha_final)
     except Exception as e:
         return f"Error {e}"
+
+
+def leerArchivo(archivo):
+    lista_dominios = []
+    with open(archivo, "r") as f:
+        for linea in f:
+            dominio = linea.strip()
+            if dominio:
+                lista_dominios.append(dominio)
+    return lista_dominios
